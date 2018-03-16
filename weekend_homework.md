@@ -10,8 +10,8 @@ Your program should be test driven and should be able to:
 
 ### Extensions
 
-- What happens if there are more guests trying to be checked in than there is free space in the room?
-- Karaoke venues usually have an entry fee - So the guests could have money so they can pay it.
+- What happens if there are more guests trying to be checked in than there is free space in the room? DONE
+- Karaoke venues usually have an entry fee - So the guests could have money so they can pay it. DONE
 
 
 ### Advanced extensions
