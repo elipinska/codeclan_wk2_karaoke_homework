@@ -29,6 +29,10 @@ class RoomTest < MiniTest::Test
     assert_equal(5, @room1.capacity)
   end
 
+  def test_till
+    assert_equal(0, @room1.till)
+  end
+
   def test_add_song
     @room1.add_song(@new_song)
     assert_equal(5, @room1.playlist.length)
@@ -67,6 +71,11 @@ class RoomTest < MiniTest::Test
 
   def test_check_in__guest_cheers
     assert_equal("Whoo!", @room1.check_in(@guest1))
+  end
+
+  def test_check_in__money_goes_into_till
+    @room1.check_in(@guest1)
+    assert_equal(3, @room1.till)
   end
 
 end

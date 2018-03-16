@@ -1,5 +1,5 @@
 class Room
-  attr_reader :number, :occupants, :playlist, :capacity, :entry_fee
+  attr_reader :number, :occupants, :playlist, :capacity, :entry_fee, :till
 
   def initialize(input_number, input_playlist, input_capacity, input_fee)
     @number = input_number
@@ -7,6 +7,7 @@ class Room
     @playlist = input_playlist || []
     @capacity = input_capacity
     @entry_fee = input_fee
+    @till = 0
   end
 
   def add_song(song)
@@ -17,6 +18,7 @@ class Room
     unless @occupants.length == @capacity
       if guest.wallet >= @entry_fee
         guest.pay(@entry_fee)
+        @till += @entry_fee
         @occupants << guest
         for song in @playlist
           return guest.cheer() if song.title == guest.fav_song.title
